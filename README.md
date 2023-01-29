@@ -1,0 +1,3 @@
+This is a small python script that uses RegEx for processing Snipd Obsidian multi-podcast exports into individual podcast markdown files.
+
+Provide the filename of the exported multi-podcast markdown file to the specified "snipd_file_name" variable within "snipd_podcast_processor.py" and run the python script. This will create a new folder called "podcast_notes" that will contain seperate markdown files for all the podcasts detailed in the original export.

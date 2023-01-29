@@ -3,16 +3,19 @@ import unicodedata
 import os
 filepath = os.path.abspath(os.curdir)
 
-# Pass Snipd Mass Export Filename
-# i.e "snipd_export_2022-11-07_13-40.md"
-snipd_file_name = 'snipd_export_2022-11-07_13-40.md'
+# Pass Snipd Obsidian Mass Export Filename
+# i.e "snipd_export_2023-01-29.md"
+snipd_file_name = 'snipd_export_2023-01-29.md'
 
 # Read all podcast snips to text
 with open(snipd_file_name, encoding="utf8") as f:
     file_text = f.read()
 
+# Convert #podcast tag into #Podcast/Episode Tag
+file_text_mod = re.sub('#podcasts', '#Podcast/Episode', file_text)
+
 # Split snipd global text file into indivial podcast text list.
-podcasts_text_list = re.split('(?<!#)#(?!#|\w)', file_text)
+podcasts_text_list = re.split('(?<!#)#(?!#|\w)', file_text_mod)
 
 
 def slugify(value, allow_unicode=False):
